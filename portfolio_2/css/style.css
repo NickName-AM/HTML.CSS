@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --color-primary: rgb(248, 203, 116);
+    --color-secondary: rgb(0,0,0);
+    --color-white: rgba(255, 255, 255, 0.8);
+    --color-white-1: rgb(255,255,255);
+    --color-black: rgb(0,0,0);
+}
+
+.dark-mode{
+    --color-primary: rgb(0,0,0);
+    --color-secondary: rgb(248, 203, 116);
+    --color-white: rgba(255, 255, 255, 0.8);
+    --color-white-1: rgb(255,255,255);
+}
+
+
+body{
+    background-color: var(--color-primary);
+    transition: all 0.4s linear;
+}
+
+.header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content{
+    cursor: pointer;
+}
+
+
+.header-content .header-name{
+    font-size: 10rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--color-secondary);
+}
+
+.first-name span{
+    display: inline-block;
+    animation: dropFromTop 1s ease-out;
+}
+
+.first-name span:nth-child(1){
+    animation-delay: 0.1s;
+}
+
+.first-name span:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.first-name span:nth-child(3){
+    animation-delay: 0.3s;
+}
+
+.first-name span:nth-child(4){
+    animation-delay: 0.4s;
+}
+
+.last-name span{
+    display: inline-block;
+    animation: dropFromBottom 1s ease-out;
+}
+
+.last-name span:nth-child(1){
+    animation-delay: 0.1s;
+}
+
+.last-name span:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.last-name span:nth-child(3){
+    animation-delay: 0.3s;
+}
+
+.last-name span:nth-child(4){
+    animation-delay: 0.4s;
+}
+
+.last-name span:nth-child(5){
+    animation-delay: 0.5s;
+}
+
+.last-name span:nth-child(6){
+    animation-delay: 0.6s;
+}
+
+.last-name span:nth-child(7){
+    animation-delay: 0.7s;
+}
+
+.last-name span:nth-child(8){
+    animation-delay: 0.8s;
+}
+
+
+
+.who-am-i-short{
+    display: flex;
+    position: relative;
+    padding: 5px;
+    letter-spacing: 5px;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 300;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-radius: 30px;
+    width: fit-content;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+
+.who-am-i-short div{
+    margin: 0 10px;
+}
+
+.cv{
+    text-align: center;
+}
+
+.cv a{
+    text-decoration: none;
+    color: var(--color-primary);
+    padding: 10px 50px;
+    background-color: var(--color-secondary);
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 30px;
+    transition: all .3s ease-in-out ;
+}
+
+.cv a:hover{
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    transform: translateY(-100px);
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px -5px var(--color-secondary);
+}
+
+/* Info section */
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.item{
+    padding: 20px;
+    font-size: 5rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease-out;
+    color: var(--color-secondary);
+}
+
+.item:hover{
+    background-color: var(--color-white);
+    transition-duration: 0s;
+}
+
+
+.circle-about, .circle-portfolio, .circle-contact{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-black);
+}
+
+.circle-about-big{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: var(--color-black);
+    display: none;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+    animation: bounce 0.6s ease-in-out;
+
+}
+
+#about-circle-big .paragraph{
+    display: none;
+    font-size: 12px;
+    color: var(--color-white-1);
+    width: 60%;
+    margin: auto;
+    line-height: 1.5rem;
+    font-weight: 400;
+    animation: slideFromTop 0.4s ease-out;
+}
+
+.portfolio-items{
+    display: none;
+    margin: 10px 0;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.portfolio-item{
+    position: relative;
+    text-align: center;
+    color: var(--color-white-1);
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    transition: all 0.3s ease-in-out;
+    animation: slideFromTop 0.4s ease-in-out;
+}
+
+
+.portfolio-item .picture{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(30%);
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-item .picture:hover{
+    filter: brightness(70%);
+}
+
+.portfolio-item .portfolio-text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--color-white-1);
+}
+
+.portfolio-item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px -5px var(--color-secondary);
+}
+
+.contact-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-item{
+    margin: 5px;
+}
+
+.username, .comment, .email{
+    background-color: var(--color-black);
+    border: 1px solid var(--color-white);
+    width: 900px;
+    padding: 20px;
+    color: var(--color-white-1);
+    font-size: 18px;
+    animation: slideFromTop 0.6s ease-in-out;
+}
+
+.form-btn{
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-size: 18px;
+    color: var(--color-white-1);
+    margin-top: 10px;
+    padding: 20px;
+    background-color: var(--color-black);
+    border: none;
+    transition: all 0.4s ease-out;
+}
+
+.btn:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+
+/* Footer */
+footer{
+    margin-top: 20px;
+}
+
+.external-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-item{
+    margin: 0 10px;
+    font-size: 30px;
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: all .8s ease-out;
+}
+
+.link-item:hover{
+    color: var(--color-white-1);
+    transition-duration: 0s;
+}
+
+.copyright{
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%{
+        transform: translateY(-100px);
+    }
+
+    20%, 60%, 100%{
+        transform: translateY(0px);
+    }
+
+    40%{
+        transform: translateY(-60px);
+    }
+
+    80%{
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes slideFromTop {
+    0%{
+        transform: translateY(-100px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropFromBottom {
+    0%{
+        transform: translateY(50vh);
+    }
+
+    40%{
+        transform: translateY(-4vh);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropFromTop {
+    0%{
+        transform: translateY(-50vh);
+    }
+
+    40%{
+        transform: translateY(4vh);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsivee */
+@media screen and (max-width: 1024px) {
+    .header-content .header-name{
+        font-size: 8rem;
+    }
+
+    .who-am-i-short{
+        font-size: 22px;
+    }
+
+
+    .username, .comment, .email{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header-content .header-name{
+        font-size: 5.5rem;
+    }
+
+    .who-am-i-short{
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .cv a{
+        padding: 5px 30px;
+        font-size: 16px;
+    }
+
+    .item{
+        font-size: 3rem;
+    }
+
+    .circle-about, .circle-portfolio, .circle-contact{
+        width: 40px;
+        height: 40px;
+    }
+
+    .circle-about-big{
+        width: 400px;
+        height: 400px;
+    }
+
+    #about-circle-big .paragraph{
+        font-size: 10px;
+    }
+
+    .portfolio-item{
+        width: 200px;
+        height: 200px;
+    }
+
+    .portfolio-item .portfolio-text{
+        font-size: 14px;
+    }
+
+    .username, .comment, .email{
+        width: 450px;
+        padding: 15px;
+        font-size: 10px;
+    }
+
+    .btn{
+        padding: 15px;
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .header-content .header-name{
+        font-size: 3.5rem;
+    }
+
+    .who-am-i-short{
+        font-size: 8px;
+    }
+
+    .cv a{
+        font-size: 10px;
+    }
+
+    .item{
+        font-size: 2rem;
+    }
+
+    .circle-about, .circle-portfolio, .circle-contact{
+        width: 25px;
+        height: 25px;
+    }
+
+    .circle-about-big{
+        width: 300px;
+        height: 300px;
+    }
+
+    #about-circle-big .paragraph{
+        font-size: 8px;
+        line-height: 1rem;
+    } 
+
+    .portfolio-item{
+        width: 100px;
+        height: 100px;
+        margin: 5px auto;
+    }
+
+    .portfolio-item .portfolio-text{
+        font-size: 10px;
+    }
+
+
+    .username, .comment, .email{
+        width: 300px;
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .btn{
+        font-size: 10px;
+        padding: 10px;
+    }
+
+}
